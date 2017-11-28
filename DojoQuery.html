@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  
+</head>
+<body>
+  <button id='element'>Element</button>
+
+  <script>
+
+    function $Dojo(id) {
+      this.element = document.getElementById(id);
+
+      this.click = (action) => {
+      this.element.addEventListener('click', action);
+  };
+
+
+  this.hover = (a, b) => { 
+    this.element.addEventListener('mouseover', a);
+    this.element.addEventListener('mouseout', b);
+};
+
+    return this;
+    }
+
+          $Dojo('element').click(() => { console.log('Clicked!') });
+          $Dojo('element').hover(() => { console.log('Mouseover...') },
+          () => { console.log('Mouseout.'); })
+
+
+</script>
+</body>
+</html>
